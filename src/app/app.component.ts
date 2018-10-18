@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {List} from './list'
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  lists: string[];
-  constructor(){
-     this.lists = ["Work on assignment","Go to the gym", "Apply for a job", "Apply for an Australian scholarship", "Learn php", "Research more on Angular"];
- }
+
+   lists = [
+      new List(1, 'Apply for a scholarship'),
+      new List(2, 'Do assignment'),
+      new List(3, 'Learn php'),
+      new List(4, 'Research more on angular'),
+      new List(5, 'Work out'),
+   ]
 }
