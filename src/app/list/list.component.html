@@ -1,12 +1,21 @@
 <h1>LISTS</h1>
 <br>
-
-<ul>
-   <div *ngFor="let list of lists; let i=index">
-      <li id="{{i}}" appStrikethrough>{{list.name}} due on {{list.completeDate|date|uppercase}}</li>
-      <button (click)="toggleDetails(i)" >Toggle Details</button>
-      <app-list-details *ngIf="list.showDescription"[list]='list' (isComplete)='deleteList($event,i)'></app-list-details>
+<div class="container">
+   <div class="row">
+      <app-list-form></app-list-form>
    </div>
+   <ul>
+      <div class="row" *ngFor="let list of lists; let i=index">
+         <div class="row">
+            <li id="{{i}}" appStrikethrough>{{list.name}} due on {{list.completeDate|date|uppercase}}</li>
+            <button class="btn btn-primary" (click)="toggleDetails(i)" >Toggle Details</button>
+            <app-list-details *ngIf="list.showDescription"[list]='list' (isComplete)='deleteList($event,i)'></app-list-details>
+         </div>
 
-</ul>
+      </div>
+
+   </ul>
+</div>
+
+
 <p *ngIf="lists.length > 4">You have quite a number of lists</p>
