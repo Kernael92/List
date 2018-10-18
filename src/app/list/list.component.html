@@ -2,7 +2,7 @@
 <br>
 <div class="container">
    <div class="row">
-      <app-list-form></app-list-form>
+      <app-list-form (addList)="addNewList($event )"></app-list-form>
    </div>
    <ul>
       <div class="row" *ngFor="let list of lists; let i=index">
