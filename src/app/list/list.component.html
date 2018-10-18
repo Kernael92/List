@@ -5,7 +5,7 @@
    <div *ngFor="let list of lists; let i=index">
       <li id="{{i}}" appStrikethrough>{{list.name}} due on {{list.completeDate|date|uppercase}}</li>
       <button (click)="toggleDetails(i)" >Toggle Details</button>
-      <app-list-details *ngIf="list.showDescription"[list]='list' (isComplete)='completeList($event,i)'></app-list-details>
+      <app-list-details *ngIf="list.showDescription"[list]='list' (isComplete)='deleteList($event,i)'></app-list-details>
    </div>
 
 </ul>

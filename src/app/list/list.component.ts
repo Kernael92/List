@@ -17,9 +17,13 @@ export class ListComponent implements OnInit {
    toggleDetails(index){
       this.lists[index].showDescription = !this.lists[index].showDescription;
    }
-   completeList(isComplete,index){
+   deleteList(isComplete,index){
       if(isComplete){
-         this.lists.splice(index,1);
+         let toDelete=confirm("Are you sure you want to delete ${this.goals[index].name}")
+
+         if (toDelete){
+            this.lists.splice(index,1)
+         }
       }
    }
   constructor() { }
